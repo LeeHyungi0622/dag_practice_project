@@ -18,7 +18,7 @@ with DAG(
 
     load_b = BashOperator(task_id="load_b", bash_command="sleep 10")
 
-    transform = BashOperator(task_id="transform", queue="high_cpu", bash_command="sleep 10")
+    transform = BashOperator(task_id="transform", queue="high_gpu", bash_command="sleep 30")
 
     extract_a >> load_a
     extract_b >> load_b
